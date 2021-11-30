@@ -33,8 +33,54 @@ var Direction2;
     Direction2["Left"] = "Left";
     Direction2["Right"] = "Right";
 })(Direction2 || (Direction2 = {}));
-console.log(Direction2.Left);
 const user = {
     id: 1,
     name: 'Jhon'
 };
+//Type Assertion
+let cid = 1;
+//let customerId = <number> cid
+let customerId = cid;
+// Fuctions
+function addNum(x, y) {
+    return x + y;
+}
+//console.log(addNum(1,2))
+//void
+function log(message) {
+    console.log(message);
+}
+const user1 = {
+    id: 1,
+    name: 'John'
+};
+const add = (x, y) => x + y;
+const sub = (x, y) => x - y;
+// Classes
+class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    register() {
+        return `${this.name} is registered`;
+    }
+}
+const brad = new Person(1, 'Brad');
+const mike = new Person(2, 'Mike');
+// Subclasses
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(3, 'Shawn', 'Developer');
+//console.log(emp.register())
+// Generics
+function getArray(items) {
+    return new Array().concat(items);
+}
+let numArray = getArray([1, 2, 3, 4]);
+let strArray = getArray(['brad', 'john', 'jill']);
+strArray.push('hi');
